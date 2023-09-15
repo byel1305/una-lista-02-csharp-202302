@@ -1,27 +1,39 @@
-using System;
-
-class Program
+﻿using System;
+					
+public class Program
 {
-    static void Main()
-    {
-        Console.WriteLine("Digite o número de horas trabalhadas no mês: ");
-        int horasTrabalhadas = Convert.ToInt32(Console.ReadLine());
+	public static void Main()
+	{
+		Console.WriteLine("Quantas horas trabalhou em um mês?");
+		string horasTrabalhadas = Console.ReadLine();
+        Console.WriteLine("Qual o seu pagamento por hora trabalhada?");
+		string valorHora = Console.ReadLine();
+        Console.WriteLine("Quantos filhos com a idade menor que 14 anos você tem?");
+		string numFilhos = Console.ReadLine();
+        Console.WriteLine("Qual o valor atual do salário família por filho?");
+        string salarioFamilia = Console.ReadLine();
+		
+		double horasTrabalhadasNum = double.Parse(horasTrabalhadas);
+        double valorHoraNum = double.Parse(valorHora);
+        double numFilhosNum = double.Parse(numFilhos);
+        double salarioFamiliaNum = double.Parse(salarioFamilia);
 
-        Console.WriteLine("Digite o valor recebido por hora de trabalho: ");
-        double valorPorHora = Convert.ToDouble(Console.ReadLine());
+        double salarioBruto = 0.0;
+        double salarioBase = horasTrabalhadasNum * valorHoraNum;
+		
+        Console.Write ("\r\n");
+        Console.Write ("===\r\n");
+        Console.Write ("\r\n");
 
-        Console.WriteLine("Digite o valor do salário família: ");
-        double salarioFamilia = Convert.ToDouble(Console.ReadLine());
+		if (salarioBase <= 1754.18) {
+            salarioBruto = salarioBase + numFilhosNum * salarioFamiliaNum;
+            Console.WriteLine("O salário bruto é de R$" + salarioBruto + "!\r\n");
+        } else {
+            Console.WriteLine("O salário bruto é de R$" + salarioBase + "!\r\n");
+            Console.WriteLine("");
+            Console.WriteLine("OBS: Você não possui direito ao salário família, portanto ele não entrou no cálculo.\r\n");
+        }
 
-        Console.WriteLine("Digite o número de filhos com idade menor que 14 anos: ");
-        int numFilhosMenor14 = Convert.ToInt32(Console.ReadLine());
-
-
-        double salarioBruto = horasTrabalhadas * valorPorHora + (salarioFamilia * numFilhosMenor14);
-
-        Console.WriteLine("O salário bruto a ser recebido é: " + salarioBruto.ToString("C2")); 
-
-
-        Console.ReadLine();
-    }
+        Console.Write ("===");
+	}
 }
