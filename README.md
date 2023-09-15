@@ -9,4 +9,4 @@
 - Ryan Augusto   Ra:
 - Rodrigo Duarte Ra:
   
-- Exercício - 2 😄⚡
+- Exercício 2 😄⚡
