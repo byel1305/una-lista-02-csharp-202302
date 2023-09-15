@@ -1,18 +1,17 @@
-using System;
-
-class Program
+﻿using System;
+					
+public class Program
 {
-    static void Main()
-    {
-        Console.WriteLine("Informe o valor do produto: ");
-        double valorOriginal = Convert.ToDouble(Console.ReadLine());
-
-
-        double novoValor = valorOriginal + (valorOriginal * 0.10);
-
-        Console.WriteLine("Novo valor do produto: " + novoValor.ToString("F2")); 
-
-
-        Console.ReadLine();
-    }
+	public static void Main()
+	{
+		Console.WriteLine("Digite o valor do produto:");
+		string valor = Console.ReadLine();
+		
+		double valorDouble = double.Parse(valor);
+			
+		double novoValor = valorDouble + (valorDouble * 0.1);
+		
+		Console.WriteLine("Novo valor do produto:");
+		Console.WriteLine("R$" + novoValor);
+	}
 }
