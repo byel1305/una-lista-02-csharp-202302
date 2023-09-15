@@ -1,21 +1,19 @@
-using System;
-
-class Program
+﻿using System;
+					
+public class Program
 {
-    static void Main()
-    {
-        Console.WriteLine("Digite o primeiro número: ");
-        double numero1 = Convert.ToDouble(Console.ReadLine());
-
-        Console.WriteLine("Digite o segundo número (base do logaritmo): ");
-        double numero2 = Convert.ToDouble(Console.ReadLine());
-
-
-        double resultado = Math.Log(numero1, numero2);
-
-        Console.WriteLine($"O logaritmo de {numero1} na base {numero2} é: {resultado}");
-
-
-        Console.ReadLine();
-    }
+	public static void Main()
+	{
+		Console.WriteLine("Digite um número:");
+		string num = Console.ReadLine();
+        Console.WriteLine("Digite uma base logarítmica para o número anterior:");
+		string baseLog = Console.ReadLine();
+		
+        double numD = double.Parse(num);
+        double baseLogD = double.Parse(baseLog);
+			
+		double resultado = Math.Log(numD, baseLogD);
+		
+		Console.WriteLine("O resultado do seu logaritmo será " + resultado + ".");
+	}
 }
