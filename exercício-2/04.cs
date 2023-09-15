@@ -1,24 +1,24 @@
-using System;
-
-class Program
+﻿using System;
+					
+public class Program
 {
-    static void Main()
-    {
-        Console.WriteLine("Digite o valor do capital a ser aplicado: ");
-        double capital = Convert.ToDouble(Console.ReadLine());
-
-        Console.WriteLine("Digite o prazo de aplicação em meses: ");
-        int prazoMeses = Convert.ToInt32(Console.ReadLine());
-
-        Console.WriteLine("Digite a taxa de juros mensal (em decimal): ");
-        double taxaJuros = Convert.ToDouble(Console.ReadLine());
-
-
-        double montante = capital * Math.Pow(1 + taxaJuros, prazoMeses);
-
-        Console.WriteLine("O montante a ser recebido é: " + montante.ToString("C2")); 
-
-
-        Console.ReadLine();
-    }
+	public static void Main()
+	{
+		Console.WriteLine("Digite o valor do capital:");
+		string capital = Console.ReadLine();
+		Console.WriteLine("Digite a taxa mensal (em decimais):");
+		string taxa = Console.ReadLine();
+        Console.WriteLine("Digite o número de meses:");
+		string meses = Console.ReadLine();
+		
+		double capitalDouble = double.Parse(capital);
+        double taxaDouble = double.Parse(taxa);
+        double mesesDouble = double.Parse(meses);
+        double taxaMeses = 1 + taxaDouble;
+		
+		double montante = capitalDouble * Math.Pow(taxaMeses, mesesDouble);
+		
+		
+		Console.WriteLine("Montante: R$" + montante);
+	}
 }
