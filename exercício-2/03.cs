@@ -1,18 +1,16 @@
-using System;
-
-class Program
+﻿using System;
+					
+public class Program
 {
-    static void Main()
-    {
-        Console.WriteLine("Digite a temperatura em graus Fahrenheit: ");
-        double temperaturaFahrenheit = Convert.ToDouble(Console.ReadLine());
-
-
-        double temperaturaCelsius = (temperaturaFahrenheit - 32) / 1.8;
-
-        Console.WriteLine("A temperatura equivalente em graus Celsius é: " + temperaturaCelsius.ToString("F2"));
-
-
-        Console.ReadLine();
-    }
+	public static void Main()
+	{
+		Console.WriteLine("Digite uma temperatura em Fahrenheit:");
+		string fahrenheit = Console.ReadLine();
+		
+		double fahrenheitDouble = double.Parse(fahrenheit);
+		
+		double celsius = (fahrenheitDouble - 32) / 1.8;
+		
+		Console.WriteLine("Temperatura em Fahrenheit:" + celsius + "°C");
+	}
 }
